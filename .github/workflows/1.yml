@@ -6,7 +6,6 @@ jobs:
   Starting-Windows:
 
     runs-on: linux-latest
-    timeout-minutes: 9999
     steps:
       - uses: actions/checkout@v3
       - name: Run
