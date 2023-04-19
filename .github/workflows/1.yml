@@ -1,1 +1,17 @@
+name: windows
 
+on: [workflow_dispatch]
+
+jobs:
+  Starting-Windows:
+
+    runs-on: linux-latest
+    timeout-minutes: 9999
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run
+        run: bash 1.sh 
+      - name: Set Timeout 6 hours
+        run: |
+         $global:progressPreference = 'silentlyContinue'
+         Start-Sleep -s 21600  
