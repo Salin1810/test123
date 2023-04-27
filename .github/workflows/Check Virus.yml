@@ -59,10 +59,6 @@ jobs:
            echo "Fulladress: $Fulladdress"
            echo "User: runneradmin"
            echo "Pwd: $Pwd"
-    - name: Download Checkvirus
-      run: |
-          Invoke-WebRequest "https://drive.google.com/uc?export=download&id=1Zc9TWNXrcxLodpe2UeNaPFZhVVbI_-Wl" -OutFile C:\Users\runneradmin\Downloads\Check-virus.rar
-          7z x C:\Users\runneradmin\Downloads\Check-virus.rar -p1 -oC:\Users\runneradmin\Downloads\
     - name: Set Timeout 6 hours
       run: |
            $global:progressPreference = 'silentlyContinue'
