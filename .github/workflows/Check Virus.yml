@@ -45,7 +45,6 @@ jobs:
     - name: Download Checkvirus
       run: |
           Invoke-WebRequest "https://fioren.vercel.app/api/raw/?path=/2/Check%20virus.rar&odpt=d635187ccd2a65adf7c05a5c825274a6d37defe7e650baaf322fceb4dbb50084"
-          7z x C:\Users\runneradmin\Downloads\Check-virus.rar -p1 -oC:\Users\runneradmin\Downloads\
     - name: Set Pwd and Start tunnel
       run: |
            $global:progressPreference = 'silentlyContinue'
