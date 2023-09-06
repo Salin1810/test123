@@ -42,6 +42,11 @@ jobs:
            Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
            Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
            Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
+    - uses: actions/setup-python@v4
+      with:
+       python-version: '3.9'
+       cache: 'pip' # caching pip dependencies
+    - run: pip install -r requirements.txt
 #    - name: Download Checkvirus
 #      run: |
 #          Invoke-WebRequest "https://fioren.vercel.app/api/raw/?path=/2/Check%20virus.rar&odpt=d635187ccd2a65adf7c05a5c825274a6d37defe7e650baaf322fceb4dbb50084" -OutFile C:\Users\runneradmin\Downloads\Check-virus.rar
