@@ -1,13 +1,12 @@
 Windows Registry Editor Version 5.00
 
-[HKEY_USERS\S-1-5-21-1824447297-273236118-3670670119-500\Software\Sysinternals]
+[HKEY_CURRENT_USER\Software\Sysinternals]
 
-[HKEY_USERS\S-1-5-21-1824447297-273236118-3670670119-500\Software\Sysinternals\Process Explorer]
+[HKEY_CURRENT_USER\Software\Sysinternals\Process Explorer]
 "EulaAccepted"=dword:00000001
 "VerifySignatures"=dword:00000001
 "VirusTotalCheck"=dword:00000001
 "VirusTotalSubmitUnknown"=dword:00000001
 
-[HKEY_USERS\S-1-5-21-1824447297-273236118-3670670119-500\Software\Sysinternals\Process Explorer\VirusTotal]
+[HKEY_CURRENT_USER\Software\Sysinternals\Process Explorer\VirusTotal]
 "VirusTotalTermsAccepted"=dword:00000001
-
