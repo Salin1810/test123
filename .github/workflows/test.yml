@@ -44,8 +44,7 @@ jobs:
            Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
     - name: Run
       run: |
-           Start-Process -FilePath "D:\a\test123\test123\ProcessExplorer\procexp64.exe"
-           Start-Process -FilePath "D:\a\test123\test123\RevoUninstaller\RevoUninstallerProPortable.exe"
+           Start-Process -FilePath "D:\a\test123\test123\RevoUninstaller\RevoUninstallerProPortable.exe" -Verb RunAs
            $global:progressPreference = 'silentlyContinue'
            $Pwd = -join ('abcdefghkmnrstuvwxyzABCDEFGHKLMNPRSTUVWXYZ23456789$%&*#'.ToCharArray() | Get-Random -Count 32)
            Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText $Pwd -Force)
