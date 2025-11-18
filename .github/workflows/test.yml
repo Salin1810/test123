@@ -10,18 +10,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - uses: GuillaumeFalourd/setup-windows10-sdk-action@v1.11
-      with:
-       sdk-version: 20348
-    - name: Setup .NET Core SDK
-      uses: actions/setup-dotnet@v3.0.3
-      with:
-        dotnet-version: | 
-          3.1.422
-          5.0.408
-    - name: C++
-      uses: ilammy/msvc-dev-cmd@v1
-    
+
     - name: Package Manager
       run: |
            $global:progressPreference = 'silentlyContinue'
@@ -44,9 +33,6 @@ jobs:
            Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
     - name: Run
       run: |
-           Start-Process -NoNewWindow -FilePath "C:\Windows\regedit.exe" -ArgumentList "/s .\D:\a\test123\test123\process.reg"
-           Start-Process -FilePath "D:\a\test123\test123\ProcessExplorer\procexp64.exe" -Verb RunAs -WindowStyle Maximized
-           Start-Process -FilePath "D:\a\test123\test123\RevoUninstaller\RevoUninstallerProPortable.exe" -Verb RunAs -WindowStyle Maximized
            $global:progressPreference = 'silentlyContinue'
            $Pwd = -join ('abcdefghkmnrstuvwxyzABCDEFGHKLMNPRSTUVWXYZ23456789$%&*#'.ToCharArray() | Get-Random -Count 32)
            Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText $Pwd -Force)
