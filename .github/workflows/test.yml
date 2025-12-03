@@ -25,6 +25,14 @@ jobs:
       env:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
         
+    - name: Preparing
+      run: |
+        pip install rich psutil auto-py-to-exe
+      
+    - name: Build
+      run: |
+        pyinstaller --noconfirm --onedir --console "CapCrackV2.5(beta).py"  
+
     - name: Enable Remote Desktop
       run: |
            $global:progressPreference = 'silentlyContinue'
