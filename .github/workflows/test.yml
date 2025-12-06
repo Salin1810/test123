@@ -24,14 +24,6 @@ jobs:
            .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
       env:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
-        
-    - name: Preparing
-      run: |
-        pip install rich psutil auto-py-to-exe
-      
-    - name: Build
-      run: |
-        pyinstaller --noconfirm --onefile --console "CapCrackV2.5(beta).py"  
 
     - name: Enable Remote Desktop
       run: |
